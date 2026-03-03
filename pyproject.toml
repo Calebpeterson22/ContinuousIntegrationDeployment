@@ -35,6 +35,12 @@ dev = [
 [tool.uv.sources]
 ContinuousIntegrationDeployment = { workspace = true }
 
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "python-dotenv>=1.2.2",
+]
+
 [project.scripts]
 my-uv-cli = "my_uv_package.cli:main"
 

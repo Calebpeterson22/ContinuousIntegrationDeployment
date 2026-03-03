@@ -1,5 +1,7 @@
 from continuousintegrationdeployment.add_numbers import add
 from continuousintegrationdeployment.template_package import multiply
+from dotenv import load_dotenv
+
 
 
 def test_add_integers():
@@ -24,3 +26,10 @@ def test_multiply_custom_factor():
 
 def test_multiply_zero():
     assert multiply(0, 100) == 0
+
+# Do you have the secrets?
+import os
+
+def test_secret_is_set():
+    load_dotenv()
+    assert os.environ.get("SOME_SECRET"), "SOME_SECRET is not set"
